@@ -1,11 +1,19 @@
 var React = require('react');
 
 // Object destructuring assignment
-var { h1 } = React.DOM;
+var { h1, div, li, ul } = React.DOM;
 
 // HTML Element
-var element = h1({}, "Hello");
+// Nested HTML element using React DOM
+// Each element is actually written as:
+// React.DOM.h1(attributes, content)
+var element = div({},
+                  h1({}, "Hello"),
+                  ul({},
+                    li({}, "React"),
+                    li({}, "Angular")
+                  )
+              );
 
 // React.render(what, where)
-// React.DOM.h1(attributes, content)
 React.render(element, document.body);
