@@ -30,4 +30,4 @@ var element2 = (
 );
 
 // React.render(what, where)
-React.render(element1, document.body);
+React.render(element2, document.body);
