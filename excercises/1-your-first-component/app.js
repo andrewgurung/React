@@ -33,9 +33,17 @@ var element2 = (
 // This component uses `render` method to return UI element
 var App = React.createClass({
   render() {
-    
+    return (
+      <div>
+        <h1>Hello from Composite Component</h1>
+        <ul>
+          <li>React</li>
+          <li>Angular</li>
+        </ul>
+      </div>
+    );
   }
 });
 
 // React.render(what, where)
-React.render(element2, document.body);
+React.render(<App/>, document.body);

@@ -40,3 +40,21 @@ React.render(element2, document.body);
 ## Composite Components
 - Create a composite component using `React.createClass` method
 - This component uses `render` method to return UI element
+
+```js
+var App = React.createClass({
+  render() {
+    return (
+      <div>
+        <h1>Hello from Composite Component</h1>
+        <ul>
+          <li>React</li>
+          <li>Angular</li>
+        </ul>
+      </div>
+    );
+  }
+});
+React.render(<App/>, document.body);
+React.render(App(), document.body); // Works but discouraged to use
+```
