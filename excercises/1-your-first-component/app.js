@@ -29,5 +29,13 @@ var element2 = (
   </div>
 );
 
+// Create a composite component using `React.createClass` method
+// This component uses `render` method to return UI element
+var App = React.createClass({
+  render() {
+    
+  }
+});
+
 // React.render(what, where)
 React.render(element2, document.body);

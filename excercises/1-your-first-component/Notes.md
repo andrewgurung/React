@@ -38,3 +38,5 @@ React.render(element2, document.body);
 ------------------------------------------
 
 ## Composite Components
+- Create a composite component using `React.createClass` method
+- This component uses `render` method to return UI element
