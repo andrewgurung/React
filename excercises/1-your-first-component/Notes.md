@@ -40,6 +40,7 @@ React.render(element2, document.body);
 ## Composite Components
 - Create a composite component using `React.createClass` method
 - This component uses `render` method to return UI element
+- Can be used as a component or as a function call
 
 ```js
 var App = React.createClass({
@@ -55,6 +56,19 @@ var App = React.createClass({
     );
   }
 });
+// Used as a Composite Component
 React.render(<App/>, document.body);
-React.render(App(), document.body); // Works but discouraged to use
+
+// Used as a function call (Discouraged. Throws a warning)
+React.render(App(), document.body);
+```
+
+Ways of using composite component as function call
+```js
+// 1. Using createElement()
+React.render(React.createElement(App,{}), document.body);
+
+// 2. Using Factory method
+App = React.createFactory(App);
+React.render(App(), document.body);
 ```
