@@ -1,49 +1,32 @@
+////////////////////////////////////////////////////////////////////////////////
+// Excercise:
+//
+// Render `DATA` to the page
+// - put the title in an h1
+// - only render mexican food (hint: arrays have a "filter" method)
+// - sort the items in alphabetical order by name
+//   (might want to use `sort-by` https://github.com/staygrimm/sort-by#example)
+////////////////////////////////////////////////////////////////////////////////
+
 var React = require('react');
+var sortBy = require('sort-by');
 
-// Object destructuring assignment
-var { h1, div, li, ul } = React.DOM;
+var DATA = {
+  title: 'Menu',
+  items: [
+    { id: 1, name: 'tacos', type: 'mexican' },
+    { id: 2, name: 'burrito', type: 'mexican' },
+    { id: 3, name: 'tostada', type: 'mexican' },
+    { id: 4, name: 'hush puppies', type: 'southern' }
+  ]
+};
 
-// HTML Element using React DOM functions
-// Each element is actually written as: React.DOM.h1(attributes, content)
-// These are all function calls with arguments returned as children of that element
-var element = (
-  div({},
-    h1({}, "Hello"),
-    ul({},
-      li({}, "React"),
-      li({}, "Angular")
-    )
-  )
-);
-
-// HTML Element using JSX expression
-// Just another way to call functions
-// More commonly used than React.DOM functions
-var element2 = (
-  <div>
-    <h1>Hello</h1>
-    <ul>
-      <li>React</li>
-      <li>Angular</li>
-    </ul>
-  </div>
-);
-
-// Create a composite component using `React.createClass` method
-// This component uses `render` method to return UI element
-var App = React.createClass({
-  render() {
-    return (
-      <div>
-        <h1>Hello from Composite Component</h1>
-        <ul>
-          <li>React</li>
-          <li>Angular</li>
-        </ul>
-      </div>
-    );
+var Menu = React.createClass({
+  render () {
+    return null;
   }
 });
 
-// React.render(what, where)
-React.render(<App/>, document.body);
+React.render(<Menu/>, document.body, () => {
+  require('./tests').run();
+});
