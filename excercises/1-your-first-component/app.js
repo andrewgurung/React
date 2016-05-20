@@ -23,7 +23,11 @@ var DATA = {
 
 var Menu = React.createClass({
   render () {
-    return null;
+    return (
+      <div>
+        <h1>{DATA.title}</h1>
+      </div>
+    );
   }
 });
 
