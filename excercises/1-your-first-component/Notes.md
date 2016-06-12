@@ -6,6 +6,7 @@ var React = require('react');
 // Object destructuring assignment
 var { h1, div, li, ul } = React.DOM;
 
+// 1. Pure JavaScript
 // HTML Element using React DOM functions
 // Each element is actually written as: React.DOM.h1(attributes, content)
 // These are all function calls with arguments returned as children of that element
@@ -19,6 +20,7 @@ var element = (
   )
 );
 
+// 2. JSX
 // HTML Element using JSX expression
 // Just another way to call functions
 // More commonly used than React.DOM functions
