@@ -25,9 +25,10 @@ var Menu = React.createClass({
   render () {
     var items = DATA.items.filter((item) => {
       return item.type === 'mexican';
-    }).sort(sortBy('name')).map((item) => {
-      return <li>{item.name}</li>;
-    });
+    })
+    .sort(sortBy('name'))
+    .map((item) => <li>{item.name}</li>);
+
     return (
       <div>
         <h1>{DATA.title}</h1>
