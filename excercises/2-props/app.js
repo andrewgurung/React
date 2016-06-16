@@ -1,9 +1,31 @@
 var React = require('react');
+var md5 = require('MD5');
 
-var Gravatar = React.createClass({
+var GRAVATAR_URL = "http://gravatar.com/avatar";
+var USERS = [
+  { id: 1, name: 'Ryan Florence', email: 'rpflorencegmail.com' },
+  { id: 2, name: 'Michael Jackson', email: 'mjijackson@gmail.com' }
+];
+
+var App = React.createClass({
   render () {
-    return <span>Email: {this.props.email}</span>;
+    var users = USERS.map((user) => {
+      var size = 36;
+      var hash = md5(user.email);
+      var url = `${GRAVATAR_URL}/${hash}?s=${size*2}`;
+      return (
+        <li>
+          <img src={url} width={size} /> {user.name}
+        </li>
+      );
+    });
+    return (
+      <div>
+        <h1>Users</h1>
+        <ul>{users}</ul>
+      </div>
+    );
   }
 });
 
-React.render(<Gravatar email="andrew@gmail.com"/>, document.body);
+React.render(<App/>, document.body);
