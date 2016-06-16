@@ -2,8 +2,8 @@ var React = require('react');
 
 var Gravatar = React.createClass({
   render () {
-    return <span>Gravatar</span>;
+    return <span>Email: {this.props.email}</span>;
   }
 });
 
-React.render(<Gravatar/>, document.body);
+React.render(<Gravatar email="andrew@gmail.com"/>, document.body);
