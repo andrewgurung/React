@@ -19,11 +19,18 @@ var emailType = (props, propName, componentName) => {
 
 var Gravatar = React.createClass({
   propTypes: {
-    email: emailType
+    email: emailType,
+    size: React.PropTypes.number.isRequired
+  },
+
+  getDefaultProps() {
+    return {
+      size: 36
+    }
   },
 
   render () {
-    var size = 36;
+    var size = this.props.size;
     var hash = md5(this.props.email);
     var url = `${GRAVATAR_URL}/${hash}?s=${size*2}`;
     return <img src={url} width={size} />;
